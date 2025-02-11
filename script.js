@@ -14,6 +14,7 @@ const sentences = [
 
 let currentSpeech = null;
 let draggedEmoji = null;
+let isDragging = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   const emojis = document.querySelectorAll('.emoji');
@@ -38,6 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function speakTargetWord(animalKey) {
+  // Don't speak if we're dragging
+  if (isDragging) return;
+
   const popup = document.getElementById('popup');
   popup.textContent = animals[animalKey].name;
   popup.style.display = 'block';
@@ -53,23 +57,31 @@ function speakTargetWord(animalKey) {
 }
 
 function handleDragStart(e) {
+  isDragging = true;
   draggedEmoji = this;
   this.classList.add('dragging');
   e.dataTransfer.setData('text/plain', this.dataset.animal);
 }
 
 function handleDragEnd(e) {
+  isDragging = false;
   this.classList.remove('dragging');
 }
 
 function handleTouchStart(e) {
   e.preventDefault();
+  isDragging = true;
   this.classList.add('dragging');
   draggedEmoji = this;
+
+  // Speak the animal name on touch start
+  const animalKey = this.dataset.animal;
+  speakTargetWord(animalKey);
 }
 
 function handleTouchEnd(e) {
   e.preventDefault();
+  isDragging = false;
   this.classList.remove('dragging');
   
   const touch = e.changedTouches[0];
@@ -83,6 +95,7 @@ function handleTouchEnd(e) {
   }
   
   draggedEmoji = null;
+  hidePopup();
 }
 
 function handleDragEnter(e) {
@@ -113,7 +126,7 @@ function hidePopup() {
   const popup = document.getElementById('popup');
   popup.style.display = 'none';
   
-  if (currentSpeech) {
+  if (currentSpeech && !isDragging) {
     window.speechSynthesis.cancel();
     currentSpeech = null;
   }
