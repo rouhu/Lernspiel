@@ -1,7 +1,7 @@
 # Lernspiel
 
 This is a langauge learning WebApp for kids to learn German. See it at URL:
-
+https://rouhu.github.io/Lernspiel/
 
 How is this made:
 1. Create some images at DALL-E or elsewhere with AI
