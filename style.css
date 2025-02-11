@@ -33,7 +33,7 @@ h1, h2 {
 
 .emoji {
   font-size: 50px;
-  cursor: move;
+  cursor: pointer;
   transition: transform 0.3s ease;
   padding: 10px;
   border-radius: 10px;
@@ -49,6 +49,10 @@ h1, h2 {
 .emoji:hover {
   transform: scale(1.1);
   background-color: #e0e0e0;
+}
+
+.emoji:active {
+  transform: scale(0.95);
 }
 
 .emoji.dragging {

@@ -15,6 +15,7 @@ const sentences = [
 let currentSpeech = null;
 let draggedEmoji = null;
 let isDragging = false;
+let lastClickTime = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   const emojis = document.querySelectorAll('.emoji');
@@ -38,9 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function speakTargetWord(animalKey) {
+function handleEmojiClick(animalKey) {
+  // Prevent double triggers with touch events
+  const now = Date.now();
+  if (now - lastClickTime < 500) return; // Debounce clicks
+  lastClickTime = now;
+
+  if (!isDragging) {
+    speakTargetWord(animalKey, true);
+  }
+}
+
+function speakTargetWord(animalKey, isClick = false) {
   // Don't speak if we're dragging
-  if (isDragging) return;
+  if (isDragging && !isClick) return;
 
   const popup = document.getElementById('popup');
   popup.textContent = animals[animalKey].name;
@@ -76,7 +88,7 @@ function handleTouchStart(e) {
 
   // Speak the animal name on touch start
   const animalKey = this.dataset.animal;
-  speakTargetWord(animalKey);
+  speakTargetWord(animalKey, true);
 }
 
 function handleTouchEnd(e) {
