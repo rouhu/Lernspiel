@@ -9,7 +9,6 @@
 
 h1 {
   color: #333;
-  font-family: 'Comic Sans MS', cursive;
 }
 
 .game-container {
@@ -31,7 +30,6 @@ h1 {
 }
 
 .target-text {
-  font-family: 'Comic Sans MS', cursive;
   color: #333;
 }
 
@@ -40,7 +38,6 @@ h1 {
 }
 
 .target-name {
-  font-family: 'Comic Sans MS', cursive;
   color: #2196F3;
   font-weight: bold;
 }
@@ -114,12 +111,12 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  min-width: 120px;
 }
 
 .start-btn {
   background-color: #4CAF50;
   color: white;
-  min-width: 120px;
 }
 
 .start-btn:hover {
@@ -189,7 +186,6 @@ h1 {
   font-size: 24px;
   color: white;
   text-align: center;
-  font-family: 'Comic Sans MS', cursive;
 }
 
 /* Mobile responsiveness */

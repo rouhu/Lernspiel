@@ -91,7 +91,7 @@ class BubbleShooter {
     this.bubble = null;
     this.arrowAngle = 0;
     this.arrowSpeed = Math.PI / 36;
-    this.arrowLength = 80;
+    this.arrowLength = 100;
     this.gameOver = false;
     this.lettersFound = Array(this.targetWord.replace(/\s/g, '').length).fill(false);
     this.startX = this.canvas.width / 2;
