@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Schlange Spiel</title>
+  <link rel="stylesheet" href="page4.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="container">
+    <div class="game-container">
+      <div class="target-display">
+        <div class="target-text">Finde:</div>
+        <div id="targetEmoji" class="target-emoji"></div>
+        <div id="targetName" class="target-name"></div>
+      </div>
+      
+      <canvas id="gameCanvas"></canvas>
+      <div class="game-controls">
+        <div class="controls">
+          <div class="control-row">
+            <button id="upBtn" class="control-btn">↑</button>
+          </div>
+          <div class="control-row">
+            <button id="leftBtn" class="control-btn">←</button>
+            <button id="downBtn" class="control-btn">↓</button>
+            <button id="rightBtn" class="control-btn">→</button>
+          </div>
+        </div>
+        <div class="game-buttons">
+          <button id="startBtn" class="action-btn start-btn">Start</button>
+        </div>
+      </div>
+    </div>
+    <div class="score">Punkte: <span id="score">0</span></div>
+    <div class="navigation">
+      <a href="page3.html" class="nav-button prev">←</a>
+      <a href="page5.html" class="nav-button next">→</a>
+    </div>
+  </div>
+  <script src="page4.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Bauernhof Lernspiel</title>
+  <link rel="stylesheet" href="page2.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Bauernhof Lernspiel</h1>
+    <div class="game-area">
+      <img src="https://pqesjkygerkbcatnzvaz.supabase.co/storage/v1/object/public/files/bolt/farm_and_animals.webp" alt="Farm Scene">
+      <div class="item barn" data-item="barn"></div>
+      <div class="item windmill" data-item="windmill"></div>
+      <div class="item tractor" data-item="tractor"></div>
+      <div class="item hen" data-item="hen"></div>
+      <div class="item chick" data-item="chick"></div>
+      <div class="item cat" data-item="cat"></div>
+      <div class="item boot" data-item="boot"></div>
+      <div class="item rake" data-item="rake"></div>
+      <div class="item hammer" data-item="hammer"></div>
+      <div class="item sun" data-item="sun"></div>
+      <div id="popup" class="popup"></div>
+    </div>
+    <div class="story-section">
+      <h2>Schreibe die Artikel und Wörter</h2>
+      <p class="hint">Achte auf Groß- und Kleinschreibung!</p>
+      <div id="story">
+        <div class="sentence">
+          <div class="article-input" data-word="Die"></div>
+          <div class="word-input" data-word="Scheune"></div>
+          ist groß und rot.
+          <button class="play-button" onclick="playSentence(0)">▶</button>
+        </div>
+        <div class="sentence">
+          <div class="article-input" data-word="Die"></div>
+          <div class="word-input" data-word="Windmühle"></div>
+          dreht sich im Wind.
+          <button class="play-button" onclick="playSentence(1)">▶</button>
+        </div>
+        <div class="sentence">
+          <div class="article-input" data-word="Der"></div>
+          <div class="word-input" data-word="Traktor"></div>
+          fährt über das Feld.
+          <button class="play-button" onclick="playSentence(2)">▶</button>
+        </div>
+        <div class="sentence">
+          <div class="article-input" data-word="Die"></div>
+          <div class="word-input" data-word="Henne"></div>
+          pickt Körner vom Boden.
+          <button class="play-button" onclick="playSentence(3)">▶</button>
+        </div>
+        <div class="sentence">
+          <div class="article-input" data-word="Das"></div>
+          <div class="word-input" data-word="Küken"></div>
+          folgt seiner Mutter.
+          <button class="play-button" onclick="playSentence(4)">▶</button>
+        </div>
+        <div class="sentence">
+          <div class="article-input" data-word="Die"></div>
+          <div class="word-input" data-word="Katze"></div>
+          schläft in der Sonne.
+          <button class="play-button" onclick="playSentence(5)">▶</button>
+        </div>
+        <div class="sentence">
+          <div class="article-input" data-word="Der"></div>
+          <div class="word-input" data-word="Stiefel"></div>
+          steht neben dem Zaun.
+          <button class="play-button" onclick="playSentence(6)">▶</button>
+        </div>
+        <div class="sentence">
+          <div class="article-input" data-word="Der"></div>
+          <div class="word-input" data-word="Rechen"></div>
+          ist für die Gartenarbeit.
+          <button class="play-button" onclick="playSentence(7)">▶</button>
+        </div>
+        <div class="sentence">
+          <div class="article-input" data-word="Der"></div>
+          <div class="word-input" data-word="Hammer"></div>
+          liegt auf dem Boden.
+          <button class="play-button" onclick="playSentence(8)">▶</button>
+        </div>
+        <div class="sentence">
+          <div class="article-input" data-word="Die"></div>
+          <div class="word-input" data-word="Sonne"></div>
+          scheint hell am Himmel.
+          <button class="play-button" onclick="playSentence(9)">▶</button>
+        </div>
+      </div>
+      <div class="button-group">
+        <button onclick="readStory()" class="story-button">Hören</button>
+        <button onclick="checkAnswers()" class="check-button">Überprüfen</button>
+        <button onclick="clearDropZones()" class="clear-button">Löschen</button>
+      </div>
+    </div>
+    <div class="navigation">
+      <a href="index.html" class="nav-button prev">←</a>
+      <a href="page3.html" class="nav-button next">→</a>
+    </div>
+  </div>
+  <script src="page2.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Bauernhof Lernspiel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Bauernhof Lernspiel</h1>
+    <div class="game-area">
+      <div class="emoji-grid">
+        <div class="emoji" draggable="true" data-animal="sheep">🐑</div>
+        <div class="emoji" draggable="true" data-animal="pig">🐷</div>
+        <div class="emoji" draggable="true" data-animal="horse">🐴</div>
+        <div class="emoji" draggable="true" data-animal="cow">🐮</div>
+      </div>
+      <div id="popup" class="popup"></div>
+    </div>
+    <div class="story-section">
+      <h2>Ziehe die Tiere in die richtigen Sätze</h2>
+      <p class="hint">Höre dir die Sätze an und ordne die Tiere zu!</p>
+      <div id="story">
+        <div class="sentence">
+          Das <div class="drop-zone" data-expects="sheep"></div> spielt fröhlich auf der grünen Wiese.
+          <button class="play-button" onclick="playSentence(0)">▶</button>
+        </div>
+        <div class="sentence">
+          Das <div class="drop-zone" data-expects="pig"></div> rollt sich glücklich im Matsch.
+          <button class="play-button" onclick="playSentence(1)">▶</button>
+        </div>
+        <div class="sentence">
+          Das <div class="drop-zone" data-expects="horse"></div> galoppiert elegant über die Felder.
+          <button class="play-button" onclick="playSentence(2)">▶</button>
+        </div>
+        <div class="sentence">
+          Die <div class="drop-zone" data-expects="cow"></div> gibt uns jeden Tag frische Milch.
+          <button class="play-button" onclick="playSentence(3)">▶</button>
+        </div>
+      </div>
+      <div class="button-group">
+        <button onclick="readStory()" class="story-button">Hören</button>
+        <button onclick="checkAnswers()" class="check-button">Überprüfen</button>
+        <button onclick="clearDropZones()" class="clear-button">Löschen</button>
+      </div>
+    </div>
+    <div class="navigation">
+      <a href="page2.html" class="nav-button next">→</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Bubble Shooter Spiel</title>
+  <link rel="stylesheet" href="page5.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="container">
+    <div class="game-container">
+      <div class="target-display">
+        <span class="instruction">Schreib das Wort:</span>
+        <div id="targetEmoji" class="target-emoji" onmouseover="speakTargetWord()"></div>
+      </div>
+      
+      <canvas id="gameCanvas"></canvas>
+      <div class="game-controls">
+        <div class="controls">
+          <button id="leftBtn" class="control-btn">←</button>
+          <button id="shootBtn" class="control-btn">🔫</button>
+          <button id="rightBtn" class="control-btn">→</button>
+        </div>
+        <div class="game-buttons">
+          <button id="resetBtn" class="action-btn">Neu starten</button>
+        </div>
+      </div>
+    </div>
+    <div class="navigation">
+      <a href="page4.html" class="nav-button prev">←</a>
+    </div>
+  </div>
+  <script src="page5.js"></script>
+</body>
+</html>

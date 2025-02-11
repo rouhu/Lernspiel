@@ -1,0 +1,264 @@
+.container {
+  max-width: 800px;
+  margin: 10px auto; /* Reduced from 20px */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Rest of the file remains unchanged */
+h1, h2 {
+  color: #333;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.hint {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.game-area {
+  position: relative;
+  margin: 20px auto;
+  width: 500px;
+}
+
+.emoji-grid {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.emoji {
+  font-size: 50px;
+  cursor: move;
+  transition: transform 0.3s ease;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.emoji:hover {
+  transform: scale(1.1);
+  background-color: #e0e0e0;
+}
+
+.emoji.dragging {
+  opacity: 0.5;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  font-size: 24px;
+  font-family: 'Comic Sans MS', cursive;
+  z-index: 1000;
+  animation: popIn 0.3s ease-out;
+}
+
+.story-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+#story {
+  font-size: 18px;
+  line-height: 2;
+  margin: 20px 0;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.sentence {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  position: relative;
+  padding-right: 40px;
+}
+
+.drop-zone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 3px dashed #ccc;
+  border-radius: 10px;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+.drop-zone.drag-over {
+  background-color: #e3f2fd;
+  border-color: #2196F3;
+}
+
+.drop-zone.correct {
+  border-color: #4CAF50;
+  background-color: #e8f5e9;
+}
+
+.drop-zone.incorrect {
+  border-color: #f44336;
+  background-color: #ffebee;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.story-button, .check-button, .clear-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.story-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.check-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.clear-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.story-button:hover {
+  background-color: #1976D2;
+}
+
+.check-button:hover {
+  background-color: #45a049;
+}
+
+.clear-button:hover {
+  background-color: #d32f2f;
+}
+
+.play-button {
+  background-color: #2196F3;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  padding: 0;
+  line-height: 1;
+}
+
+.play-button:hover {
+  background-color: #1976D2;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.nav-button {
+  background-color: #2196F3;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #1976D2;
+}
+
+.next {
+  margin-left: auto;
+}
+
+@keyframes popIn {
+  from { transform: translate(-50%, -50%) scale(0); }
+  to { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Prevent text selection */
+.emoji, .button-group button, .play-button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Prevent scrolling when dragging on mobile */
+body {
+  overscroll-behavior: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .game-area {
+    width: 100%;
+  }
+
+  .emoji-grid {
+    flex-wrap: wrap;
+  }
+
+  .emoji {
+    font-size: 40px;
+    padding: 8px;
+  }
+
+  .drop-zone {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+  }
+}
